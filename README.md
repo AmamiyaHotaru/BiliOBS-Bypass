@@ -23,13 +23,6 @@
 3. 点击开播，获取推流地址和直播码
 4. 将获取到的推流信息填入OBS或其他直播软件即可开始直播
 
-## 工作原理
-
-脚本通过拦截并修改B站API请求实现功能：
-
-1. 拦截 `GetWebLivePermission` API响应，强制将 `allow_live` 字段设置为 `true`
-2. 拦截 `startLive` API请求，修改请求参数 `platform` 为 `mobile`
-
 ## 注意事项
 
 - 本脚本仅供学习和技术研究使用
