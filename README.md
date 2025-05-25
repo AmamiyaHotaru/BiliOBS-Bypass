@@ -12,7 +12,7 @@
 ## 安装方法
 
 1. 首先安装 [Tampermonkey](https://www.tampermonkey.net/) 浏览器扩展
-2. 点击 Tampermonkey 图标，选择"创建新脚本"
+2. 点击 Tampermonkey 图标，选择"创建新脚本"（也可以直接访问[greasyfork](https://greasyfork.org/zh-CN/scripts/537106-bilibili%E5%BC%BA%E5%88%B6%E5%BC%80%E5%90%AF%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%92%AD)进行安装）
 3. 复制本脚本所有代码并粘贴
 4. 保存（Ctrl+S）并启用脚本
 
