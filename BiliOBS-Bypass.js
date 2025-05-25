@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BILIBILI强制开启第三方开播
 // @namespace    https://www.eunie.online
-// @version      1.2
+// @version      1.2.2
 // @description  强制显示第三方开播方式，获取BILIBILI推流码
 // @author       AmamiyaHotaru
 // @match        https://link.bilibili.com/*
@@ -10,6 +10,8 @@
 // @connect      api.live.bilibili.com
 // @run-at       document-start
 // @license MIT
+// @downloadURL https://update.greasyfork.org/scripts/537106/BILIBILI%E5%BC%BA%E5%88%B6%E5%BC%80%E5%90%AF%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%92%AD.user.js
+// @updateURL https://update.greasyfork.org/scripts/537106/BILIBILI%E5%BC%BA%E5%88%B6%E5%BC%80%E5%90%AF%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%92%AD.meta.js
 // ==/UserScript==
 
 (function() {
@@ -28,10 +30,8 @@
         const xhr = this;
         const url = this._requestURL;
         const method = this._requestMethod;
-
         if (url && url.includes('GetWebLivePermission')) {
             const originalOnReadyStateChange = xhr.onreadystatechange;
-
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     try {
@@ -46,15 +46,6 @@
                                     return JSON.stringify(responseData);
                                 }
                             });
-
-                            if (xhr.response && typeof xhr.response === 'object') {
-                                Object.defineProperty(xhr, 'response', {
-                                    get: function() {
-                                        return responseData;
-                                    }
-                                });
-                            }
-
                         }
                     } catch (e) {
                         console.error('修改GetWebLivePermission返回值出错:', e);
